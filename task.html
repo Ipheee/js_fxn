@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. Create a function that will be able to convert figures from Fahrenheit to Celsius.
+
+        function toCelsius(f) {
+            const cel = (f - 32) * 5 / 9
+            console.log(cel)
+        }
+
+        // toCelsius(50)
+
+
+        // 2. Create a function that will calculate the average of numbers in an array.
+
+        function average() {
+            const arr = [1, 2, 3, 4, 5];
+            const n = arr.length
+            const average = arr.reduce((a, b) => a + b, 0) / n;
+            console.log(average);
+        }
+
+        // average()
+
+
+        // 3. Create a function that checks if a number, n is divisible by two numbers x and y. All inputs are positive, non-zero digits.
+
+        function isDivisible(n, x, y) {
+            if (n % x == 0 && n % y == 0) {
+                ans = true;
+            } else {
+                ans = false;
+            }
+            console.log(ans)
+        }
+
+        // isDivisible(6, 2, 3)
+
+
+        // 4. Create a function that will output the first 100 prime numbers.
+
+        function prime() {
+            let count = 0
+            let i, j
+            for (j = 2; j <= 100; j++) {
+                for (i = 1; i <= j; i++) {
+                    if (j % i == 0)
+                        count++
+                }
+                if (count == 2)
+                    console.log(j)
+                count = 0
+            }
+        }
+        // prime()
+
+
+        // 5. Create a function that will return a boolean specifying if a number is a prime number.
+
+        function isPrime(num) {
+            let count = 0
+            for (i = 1; i <= num; i++) {
+                if (num % i == 0)
+                    count++
+            }
+            if (count == 2) {
+                prime = false;
+            } else {
+                isPrime = true;
+            }
+
+            console.log(prime)
+
+        }
+
+        // isPrime(11);
+
+
+        // 6. Create a function that receives an array of numbers of diverse numbers and returns an array containing only positive numbers.
+
+        let all = prompt("Give me an array of numbers seperated by ','");
+        let splitted = all.split `,`.map(x => +x);
+
+        function returner(splitted) {
+            let positive = [];
+            for (let i = 0; i < splitted.length; i++) {
+                const el = splitted[i];
+                if (el >= 0) {
+                    positive.push(el);
+                }
+            }
+            return positive;
+        }
+
+        var positive = returner(splitted);
+        console.log(positive);
+
+        // prompt()
+
+
+        // 7. Write a program that prints the numbers from 1 to 100. 
+        // But for multiples of 3 prints "Fizz" instead of the number and for the multiples of 5 prints "Buzz". 
+        // For numbers which are multiples of both 3 and 5 prints "FizzBuzz".
+
+        function FizzBuzz() {
+
+            for (let number = 1; number <= 100; number++) {
+                let toPrint = "";
+
+                if (number % 3 == 0) {
+                    toPrint += "Fizz";
+                }
+                if (number % 5 == 0) {
+                    toPrint += "Buzz";
+                }
+                if (toPrint === "") {
+                    toPrint = number;
+                }
+                console.log(toPrint);
+
+            }
+        }
+        // FizzBuzz()
+
+
+        // 8. The marketing team is spending way too much time typing in hashtags. 
+        // Let’s create a hashtag generator for them, our hashtag generator will meet the following criteria; 
+        // It must start with a hash symbol, #.
+        // Ignore all spaces in the input.
+        // All words must have their first letter capitalized.
+
+        function generateHashtag(x) {
+            if (x.trim() === '') return false;
+
+            const stringWithCamelCase = x
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join('');
+
+            const stringWithHashtag = `#${stringWithCamelCase.trim()}`;
+            console.log(stringWithHashtag)
+
+        }
+        // generateHashtag('I am the best')
+    </script>
+
+
+</body>
+
+</html>
